@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
 import Container from "./style";
 
@@ -10,7 +11,9 @@ export default function PageLogin() {
         <input type="password" placeholder="senha" />
         <button type="submit">Entrar</button>
       </form>
-      <p>Não tem uma conta? Cadastre-se!</p>
+      <Link to="/cadastro">
+        <p>Não tem uma conta? Cadastre-se!</p>
+      </Link>
     </Container>
   );
 }

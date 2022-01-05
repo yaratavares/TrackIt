@@ -5,14 +5,13 @@ const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  justify-content: center;
 
   img {
     width: 180px;
     height: 178.83px;
 
+    margin-top: 68px;
     margin-bottom: 32.62px;
   }
 
@@ -58,6 +57,12 @@ const Container = styled.div`
 
     :hover {
       cursor: pointer;
+      text-decoration-line: underline;
+    }
+  }
+
+  @media (max-width: 375px) {
+    p {
       text-decoration-line: underline;
     }
   }

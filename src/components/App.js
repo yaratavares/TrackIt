@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import PageLogin from "./PageLogin";
-import PageRegistration from "./PageRegistration";
+import PageLogin from "./PageInit/PageLogin";
+import PageRegistration from "./PageInit/PageRegistration";
 
 export default function App() {
   return (
