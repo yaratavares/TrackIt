@@ -38,6 +38,7 @@ const Container = styled.div`
   button {
     height: 45px;
     width: 303px;
+    margin-bottom: 25px;
 
     background: #52b6ff;
     border-radius: 4.63636px;
@@ -51,7 +52,6 @@ const Container = styled.div`
   }
 
   p {
-    margin-top: 25px;
     color: #52b6ff;
     font-size: 13.98px;
 

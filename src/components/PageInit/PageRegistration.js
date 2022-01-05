@@ -28,7 +28,7 @@ export default function PageRegistration() {
     request.then(() => navigate("/"));
     request.catch(() => {
       alert("Não foi possível fazer o cadastro! Tente novamente.");
-      console.log(request.response);
+      console.log(request);
     });
   }
 
