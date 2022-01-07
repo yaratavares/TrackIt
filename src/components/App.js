@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserLoginProvider from "../contexts/UserLogin";
 
 import PageLogin from "./PageInit/PageLogin";
 import PageRegistration from "./PageInit/PageRegistration";
 import PageToday from "./PageToday";
-
-import UserLoginProvider from "../contexts/UserLogin";
+import PageHabits from "./PageHabits";
+import PageHistory from "./PageHistory";
 
 export default function App() {
   return (
@@ -13,9 +14,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<PageLogin />} />
           <Route path="/cadastro" element={<PageRegistration />} />
-          {/* <Route path="/habitos" element={} /> */}
+          <Route path="/habitos" element={<PageHabits />} />
           <Route path="/hoje" element={<PageToday />} />
-          {/* <Route path="/historico" element={} /> */}
+          <Route path="/historico" element={<PageHistory />} />
         </Routes>
       </UserLoginProvider>
     </BrowserRouter>

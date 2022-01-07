@@ -16,12 +16,15 @@ export const FooterContainer = styled.footer`
     position: relative;
   }
 
-  p {
-    font-size: 17.98px;
-    color: #52b6ff;
+  div {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    a {
+      color: #52b6ff;
+      font-size: 17.98px;
+    }
 
     :hover {
       cursor: pointer;

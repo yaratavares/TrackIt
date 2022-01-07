@@ -4,10 +4,10 @@ import { Container } from "./style";
 
 export default function PageToday() {
   return (
-    <Container>
+    <>
       <HeaderPage />
-      <div>Hoje!</div>
+      <Container></Container>
       <FooterPage />
-    </Container>
+    </>
   );
 }

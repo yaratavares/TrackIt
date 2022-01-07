@@ -9,7 +9,7 @@ export default function HeaderPage() {
   return (
     <HeaderContainer>
       <h1>TrackIt</h1>
-      <img src={user.image} alt={`Imagem perfil ${user.name}`} />
+      <img src={user.image} alt={`Imagem ${user.name}`} />
     </HeaderContainer>
   );
 }
