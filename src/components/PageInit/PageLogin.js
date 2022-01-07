@@ -6,7 +6,7 @@ import logo from "../../assets/logo.jpg";
 import Container from "./style";
 import InputsInPages from "./InputsInPages";
 
-import { UserLogin } from "../contexts/UserLogin";
+import { UserLogin } from "../../contexts/UserLogin";
 import ButtonInPages from "./ButtonInPages";
 
 export default function PageLogin() {
@@ -16,7 +16,11 @@ export default function PageLogin() {
   ];
   const navigate = useNavigate();
   const [promise, setPromise] = useState(null);
-  const { data, setData } = useContext(UserLogin);
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  const { setUser } = useContext(UserLogin);
 
   function login(event) {
     event.preventDefault();
@@ -24,7 +28,10 @@ export default function PageLogin() {
     const request = getUser(data);
     setPromise(request);
 
-    request.then(() => navigate("/hoje"));
+    request.then((response) => {
+      setUser(response.data);
+      navigate("/hoje");
+    });
     request.catch(() => {
       setPromise(null);
       alert("Não foi possível fazer o login! Tente novamente.");
