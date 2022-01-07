@@ -30,6 +30,10 @@ const Container = styled.div`
     border-radius: 5px;
     font-size: 19.98px;
 
+    :disabled {
+      background: #f2f2f2;
+    }
+
     ::placeholder {
       color: #dbdbdb;
     }
@@ -45,6 +49,10 @@ const Container = styled.div`
     font-size: 20.98px;
     color: #ffffff;
     border: none;
+
+    :disabled {
+      background: rgba(82, 182, 255, 0.5);
+    }
 
     :hover {
       cursor: pointer;

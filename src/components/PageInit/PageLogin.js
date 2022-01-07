@@ -1,35 +1,33 @@
-import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import Loader from "react-loader-spinner";
+import { getUser } from "../../services/trackit";
 import logo from "../../assets/logo.jpg";
 import Container from "./style";
+import InputsInPages from "./InputsInPages";
+
+import { UserLogin } from "../contexts/UserLogin";
+import ButtonInPages from "./ButtonInPages";
 
 export default function PageLogin() {
+  const inputs = [
+    { field: "email", name: "email", text: "email" },
+    { field: "password", name: "password", text: "senha" },
+  ];
   const navigate = useNavigate();
-  const [data, setData] = useState({
-    email: "",
-    password: "",
-  });
-
-  function keyboardAnswer(parameterVariable, text) {
-    setData({ ...data, [parameterVariable]: text });
-    console.log(data);
-  }
+  const [promise, setPromise] = useState(null);
+  const { data, setData } = useContext(UserLogin);
 
   function login(event) {
     event.preventDefault();
 
-    const request = axios.post(
-      "https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login",
-      data
-    );
+    const request = getUser(data);
+    setPromise(request);
 
     request.then(() => navigate("/hoje"));
     request.catch(() => {
+      setPromise(null);
       alert("Não foi possível fazer o login! Tente novamente.");
-      console.log(request);
     });
   }
 
@@ -37,21 +35,13 @@ export default function PageLogin() {
     <Container>
       <img src={logo} alt="logotipo TrackIt" />
       <form onSubmit={login}>
-        <input
-          type="email"
-          name="email"
-          onChange={(e) => keyboardAnswer(e.target.name, e.target.value)}
-          placeholder="email"
+        <InputsInPages
+          inputs={inputs}
+          promise={promise}
+          data={data}
+          setData={setData}
         />
-        <input
-          type="password"
-          name="password"
-          onChange={(e) => keyboardAnswer(e.target.name, e.target.value)}
-          placeholder="senha"
-        />
-        <button type="submit" disabled>
-          <Loader type="ThreeDots" color="#FFFFFF" height={45} width={45} />
-        </button>
+        <ButtonInPages buttonName={"Entrar"} promise={promise} />
       </form>
       <Link to="/cadastro">
         <p>Não tem uma conta? Cadastre-se!</p>
