@@ -33,4 +33,26 @@ function deleteHabits(token, idHabit) {
   return request;
 }
 
-export { getUser, postRegistration, getHabits, saveHabits, deleteHabits };
+function getHabitsToday(token) {
+  const request = axios.get(`${BASE_URL}/habits/today`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return request;
+}
+
+function checkTheHabit(token, id, checkOrUncheck) {
+  const request = axios.post(`${BASE_URL}/habits/${id}/${checkOrUncheck}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return request;
+}
+
+export {
+  getUser,
+  postRegistration,
+  getHabits,
+  saveHabits,
+  deleteHabits,
+  getHabitsToday,
+  checkTheHabit,
+};

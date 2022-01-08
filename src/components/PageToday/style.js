@@ -7,3 +7,15 @@ export const Container = styled.div`
 
   background-color: #ebebeb;
 `;
+
+export const DayTitle = styled.h1`
+  font-size: 22.976px;
+  color: #126ba5;
+`;
+
+export const PercentageDay = styled.h2`
+  font-size: 17.976px;
+  color: #bababa;
+  margin-bottom: 28px;
+  margin-top: 4px;
+`;
