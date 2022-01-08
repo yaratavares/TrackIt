@@ -30,6 +30,10 @@ export const AddHabit = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Text = styled.div`

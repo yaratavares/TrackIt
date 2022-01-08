@@ -5,8 +5,9 @@ export default function InputsInPages({ inputs, promise, data, setData }) {
 
   return (
     <>
-      {inputs.map((input) => (
+      {inputs.map((input, index) => (
         <input
+          key={index}
           type={input.field}
           name={input.name}
           onChange={(e) => keyboardAnswer(e.target)}

@@ -4,7 +4,6 @@ import { UserLogin } from "../../contexts/UserLogin";
 
 export default function HeaderPage() {
   const { user } = useContext(UserLogin);
-  console.log(user);
 
   return (
     <HeaderContainer>
