@@ -22,6 +22,15 @@ export const Habit = styled.div`
       margin-top: 8px;
       line-height: 16px;
       font-size: 12.98px;
+
+      span.record {
+        color: ${({ greenRecord }) => (greenRecord ? "#8FC549" : "#666666")};
+      }
+
+      span.sequence {
+        color: ${({ greenSequence }) =>
+          greenSequence ? "#8FC549" : "#666666"};
+      }
     }
   }
 `;

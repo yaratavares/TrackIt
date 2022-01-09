@@ -4,7 +4,7 @@ export const Check = styled.div`
   width: 69px;
   height: 69px;
   background: ${({ checkOrUncheck }) =>
-    checkOrUncheck === "check" ? "#8FC549" : "#EBEBEB"};
+    checkOrUncheck ? "#8FC549" : "#EBEBEB"};
   border: 1px solid #e7e7e7;
   border-radius: 5px;
 

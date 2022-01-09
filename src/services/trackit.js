@@ -41,9 +41,13 @@ function getHabitsToday(token) {
 }
 
 function checkTheHabit(token, id, checkOrUncheck) {
-  const request = axios.post(`${BASE_URL}/habits/${id}/${checkOrUncheck}`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  const request = axios.post(
+    `${BASE_URL}/habits/${id}/${checkOrUncheck}`,
+    {},
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
   return request;
 }
 

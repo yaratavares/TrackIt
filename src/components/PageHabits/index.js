@@ -15,7 +15,7 @@ export default function PageHabits() {
 
   useEffect(() => {
     updateHabits(setListHabit, user.token);
-  }, []);
+  }, [user.token]);
 
   return (
     <>
