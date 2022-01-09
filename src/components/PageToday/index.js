@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { UserLogin } from "../../contexts/UserLogin";
 
-import FooterPage from "../FooterPage";
 import HeaderPage from "../HeaderPage";
-import BoxHabits from "./BoxHabits";
-import { Container, PercentageDay } from "./style";
 import DayFormat from "./DayFormat";
+import PercentageToday from "./PercentageToday";
+import BoxHabits from "./BoxHabits";
+import FooterPage from "../FooterPage";
+import { Container } from "./style";
 import updateHabitsToday from "./common/updateHabitsToday";
 
 export default function PageToday() {
@@ -21,7 +22,7 @@ export default function PageToday() {
       <HeaderPage />
       <Container>
         <DayFormat />
-        <PercentageDay>Nenhum hábito concluído ainda</PercentageDay>
+        <PercentageToday habits={habitsDay} />
         {habitsDay.map((habit) => (
           <BoxHabits
             key={habit.id}
