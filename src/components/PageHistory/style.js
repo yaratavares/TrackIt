@@ -20,13 +20,6 @@ export const TopoMenu = styled.div`
   }
 `;
 
-export const Text = styled.div`
-  margin-top: 28px;
-  font-size: 17.98px;
-  line-height: 22px;
-  color: #666666;
-`;
-
 export const BoxCalendar = styled.div`
   .calendarStyle {
     width: 100%;

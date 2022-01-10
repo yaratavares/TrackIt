@@ -8,7 +8,7 @@ import dayjs from "dayjs";
 
 import FooterPage from "../FooterPage";
 import HeaderPage from "../HeaderPage";
-import { Container, Text, TopoMenu, BoxCalendar } from "./style";
+import { Container, TopoMenu, BoxCalendar } from "./style";
 import { getHistoryUser } from "../../common/services/trackit";
 
 export default function PageHistory() {
@@ -38,9 +38,6 @@ export default function PageHistory() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  console.log(historyUser);
-  console.log(arrayDays);
 
   return (
     <>
