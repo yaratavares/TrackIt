@@ -14,7 +14,13 @@ export default function PercentageToday({ habits }) {
       }
       return takeDone;
     });
-    setPercentageProgress(Math.round((takeDone.length / habits.length) * 100));
+    if (takeDone.length !== 0) {
+      setPercentageProgress(
+        Math.round((takeDone.length / habits.length) * 100)
+      );
+    } else {
+      setPercentageProgress(0);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [habits]);
 

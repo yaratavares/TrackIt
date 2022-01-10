@@ -9,7 +9,6 @@ export default function UserLoginProvider({ children }) {
   const [user, setUser] = useState(
     userOnLocalStorage !== null ? userOnLocalStorage : {}
   );
-  console.log(user);
 
   function setAndPersistUser(userLogin) {
     setUser(userLogin);

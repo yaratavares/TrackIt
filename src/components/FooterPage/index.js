@@ -29,7 +29,6 @@ export default function FooterPage() {
                 textColor: "#fff",
                 pathColor: "#fff",
                 trailColor: "transparent",
-
                 cursor: "pointer",
               })}
             />
