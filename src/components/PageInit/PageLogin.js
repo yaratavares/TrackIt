@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserLogin } from "../../common/contexts/UserLogin";
 import { getUser } from "../../common/services/trackit";
@@ -19,7 +19,14 @@ export default function PageLogin() {
     email: "",
     password: "",
   });
-  const { setUser } = useContext(UserLogin);
+  const { user, setAndPersistUser } = useContext(UserLogin);
+
+  useEffect(() => {
+    if (user.token) {
+      navigate("/hoje");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   function login(event) {
     event.preventDefault();
@@ -28,8 +35,7 @@ export default function PageLogin() {
     setPromise(request);
 
     request.then((response) => {
-      setUser(response.data);
-      navigate("/hoje");
+      setAndPersistUser(response.data);
     });
     request.catch(() => {
       setPromise(null);

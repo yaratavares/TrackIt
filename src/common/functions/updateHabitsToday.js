@@ -5,5 +5,5 @@ export default function updateHabitsToday(token, setHabitsDay) {
   request.then((response) => {
     setHabitsDay(response.data);
   });
-  request.catch((response) => console.log(response));
+  request.catch((response) => alert(response.data.message));
 }

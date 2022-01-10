@@ -12,6 +12,7 @@ export default function CheckHabits({ habit, setHabit }) {
 
   useEffect(() => {
     updateHabitsToday(user.token, setHabit);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkOrUncheck]);
 
   function clickCheck() {

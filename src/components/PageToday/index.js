@@ -8,14 +8,22 @@ import BoxHabits from "./BoxHabits";
 import FooterPage from "../FooterPage";
 import { Container } from "./style";
 import updateHabitsToday from "../../common/functions/updateHabitsToday";
+import { useNavigate } from "react-router-dom";
 
 export default function PageToday() {
   const [habitsDay, setHabitsDay] = useState([]);
+  const navigate = useNavigate();
   const { user } = useContext(UserLogin);
 
   useEffect(() => {
-    updateHabitsToday(user.token, setHabitsDay);
-  }, [user.token]);
+    if (!user.token) {
+      alert("Primeiro faça Login ou cadastre-se!");
+      navigate("/");
+    } else {
+      updateHabitsToday(user.token, setHabitsDay);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

@@ -13,19 +13,18 @@ import { StyleGlobal } from "../common/style/StyleGlobal";
 export default function App() {
   return (
     <BrowserRouter>
-      <StyleGlobal>
-        <UserLoginProvider>
-          <PercentageProgress>
-            <Routes>
-              <Route path="/" element={<PageLogin />} />
-              <Route path="/cadastro" element={<PageRegistration />} />
-              <Route path="/habitos" element={<PageHabits />} />
-              <Route path="/hoje" element={<PageToday />} />
-              <Route path="/historico" element={<PageHistory />} />
-            </Routes>
-          </PercentageProgress>
-        </UserLoginProvider>
-      </StyleGlobal>
+      <StyleGlobal />
+      <UserLoginProvider>
+        <PercentageProgress>
+          <Routes>
+            <Route path="/" element={<PageLogin />} />
+            <Route path="/cadastro" element={<PageRegistration />} />
+            <Route path="/habitos" element={<PageHabits />} />
+            <Route path="/hoje" element={<PageToday />} />
+            <Route path="/historico" element={<PageHistory />} />
+          </Routes>
+        </PercentageProgress>
+      </UserLoginProvider>
     </BrowserRouter>
   );
 }

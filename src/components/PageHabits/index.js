@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { AddHabit, Container, Text, TopoMenu } from "./style";
+import { useNavigate } from "react-router-dom";
 
 import { UserLogin } from "../../common/contexts/UserLogin";
 import updateHabits from "../../common/functions/updateHabits";
@@ -10,12 +11,19 @@ import FooterPage from "../FooterPage";
 
 export default function PageHabits() {
   const { user } = useContext(UserLogin);
+  const navigate = useNavigate();
   const [listHabit, setListHabit] = useState([]);
   const [displayAdd, setDisplayAdd] = useState(true);
 
   useEffect(() => {
-    updateHabits(setListHabit, user.token);
-  }, [user.token]);
+    if (!user.token) {
+      alert("Primeiro faça Login ou cadastre-se!");
+      navigate("/");
+    } else {
+      updateHabits(setListHabit, user.token);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

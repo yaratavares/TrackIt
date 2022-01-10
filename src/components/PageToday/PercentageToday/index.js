@@ -5,9 +5,9 @@ import { PercentageDay } from "./style";
 export default function PercentageToday({ habits }) {
   const { percentageProgress, setPercentageProgress } =
     useContext(PercentageProgress);
-  let takeDone = [];
 
   useEffect(() => {
+    let takeDone = [];
     habits.map((habit) => {
       if (habit.done === true) {
         takeDone = [...takeDone, habit.done];
@@ -15,6 +15,7 @@ export default function PercentageToday({ habits }) {
       return takeDone;
     });
     setPercentageProgress(Math.round((takeDone.length / habits.length) * 100));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [habits]);
 
   return (
