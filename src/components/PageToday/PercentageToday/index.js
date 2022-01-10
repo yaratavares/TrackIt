@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { PercentageProgress } from "../../../contexts/PercentageProgress";
+import { PercentageProgress } from "../../../common/contexts/PercentageProgress";
 import { PercentageDay } from "./style";
 
 export default function PercentageToday({ habits }) {
@@ -12,6 +12,7 @@ export default function PercentageToday({ habits }) {
       if (habit.done === true) {
         takeDone = [...takeDone, habit.done];
       }
+      return takeDone;
     });
     setPercentageProgress(Math.round((takeDone.length / habits.length) * 100));
   }, [habits]);

@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import { UserLogin } from "../../../contexts/UserLogin";
-import { checkTheHabit } from "../../../services/trackit";
-import updateHabitsToday from "../common/updateHabitsToday";
+import { UserLogin } from "../../../common/contexts/UserLogin";
+import { checkTheHabit } from "../../../common/services/trackit";
+import updateHabitsToday from "../../../common/functions/updateHabitsToday";
 
-import check from "../../../assets/check.png";
+import check from "../../../common/assets/check.png";
 import { Check } from "./style";
 
 export default function CheckHabits({ habit, setHabit }) {

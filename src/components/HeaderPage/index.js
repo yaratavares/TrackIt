@@ -1,6 +1,6 @@
 import { useContext } from "react";
+import { UserLogin } from "../../common/contexts/UserLogin";
 import HeaderContainer from "./style";
-import { UserLogin } from "../../contexts/UserLogin";
 
 export default function HeaderPage() {
   const { user } = useContext(UserLogin);

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import { UserLogin } from "../../../contexts/UserLogin";
-import { saveHabits } from "../../../services/trackit";
-import updateHabits from "../common/updateHabits";
+import { UserLogin } from "../../../common/contexts/UserLogin";
+import { saveHabits } from "../../../common/services/trackit";
+import updateHabits from "../../../common/functions/updateHabits";
 import Loader from "react-loader-spinner";
 
 import ButtonsDays from "../ButtonsDays";

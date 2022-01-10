@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+
+export const StyleGlobal = createGlobalStyle`
+
 html,
 body,
 div,
@@ -132,3 +136,13 @@ a {
   text-decoration: none;
   color: black;
 }
+body {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+header {
+  font-family: "Playball", cursive;
+}
+  
+
+`;

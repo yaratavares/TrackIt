@@ -1,4 +1,4 @@
-import { getHabits } from "../../../services/trackit";
+import { getHabits } from "../services/trackit";
 
 function updateHabits(setListHabit, token) {
   const request = getHabits(token);

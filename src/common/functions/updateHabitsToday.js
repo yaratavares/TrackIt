@@ -1,4 +1,4 @@
-import { getHabitsToday } from "../../../services/trackit";
+import { getHabitsToday } from "../services/trackit";
 
 export default function updateHabitsToday(token, setHabitsDay) {
   const request = getHabitsToday(token);

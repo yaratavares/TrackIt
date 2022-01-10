@@ -1,11 +1,10 @@
-import { FooterContainer } from "./style";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { PercentageProgress } from "../../common/contexts/PercentageProgress";
 
-import { ProgressBar } from "./style";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { PercentageProgress } from "../../contexts/PercentageProgress";
+import { FooterContainer, ProgressBar } from "./style";
 
 export default function FooterPage() {
   const { percentageProgress } = useContext(PercentageProgress);

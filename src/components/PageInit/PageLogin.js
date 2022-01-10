@@ -1,13 +1,12 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { UserLogin } from "../../common/contexts/UserLogin";
+import { getUser } from "../../common/services/trackit";
 
-import { getUser } from "../../services/trackit";
-import logo from "../../assets/logo.jpg";
+import ButtonInPages from "./ButtonInPages/index";
+import InputsInPages from "./InputsInPages/index";
+import logo from "../../common/assets/logo.jpg";
 import Container from "./style";
-import InputsInPages from "./InputsInPages";
-
-import { UserLogin } from "../../contexts/UserLogin";
-import ButtonInPages from "./ButtonInPages";
 
 export default function PageLogin() {
   const inputs = [

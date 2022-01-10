@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/logo.jpg";
+import logo from "../../common/assets/logo.jpg";
 import Container from "./style";
 
-import { postRegistration } from "../../services/trackit";
-import ButtonInPages from "./ButtonInPages";
-import InputsInPages from "./InputsInPages";
+import { postRegistration } from "../../common/services/trackit";
+import ButtonInPages from "./ButtonInPages/index";
+import InputsInPages from "./InputsInPages/index";
 
 export default function PageRegistration() {
   const inputs = [

@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import { AddHabit, Container, Text, TopoMenu } from "./style";
 
-import { UserLogin } from "../../contexts/UserLogin";
-import updateHabits from "./common/updateHabits";
+import { UserLogin } from "../../common/contexts/UserLogin";
+import updateHabits from "../../common/functions/updateHabits";
 import HeaderPage from "../HeaderPage";
 import FormAddHabit from "./FormAddHabit";
 import CreateHabits from "./CreateHabits";

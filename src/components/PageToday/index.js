@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { UserLogin } from "../../contexts/UserLogin";
+import { UserLogin } from "../../common/contexts/UserLogin";
 
 import HeaderPage from "../HeaderPage";
 import DayFormat from "./DayFormat";
@@ -7,7 +7,7 @@ import PercentageToday from "./PercentageToday";
 import BoxHabits from "./BoxHabits";
 import FooterPage from "../FooterPage";
 import { Container } from "./style";
-import updateHabitsToday from "./common/updateHabitsToday";
+import updateHabitsToday from "../../common/functions/updateHabitsToday";
 
 export default function PageToday() {
   const [habitsDay, setHabitsDay] = useState([]);

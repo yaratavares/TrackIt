@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { UserLogin } from "../../../contexts/UserLogin";
-import updateHabits from "../common/updateHabits";
-import { deleteHabits } from "../../../services/trackit";
+import { UserLogin } from "../../../common/contexts/UserLogin";
+import updateHabits from "../../../common/functions/updateHabits";
+import { deleteHabits } from "../../../common/services/trackit";
 
 import ButtonsDays from "../ButtonsDays";
 import { Habits } from "./style";
-import trash from "../../../assets/delete.png";
+import trash from "../../../common/assets/delete.png";
 
 export default function CreateHabits({ listHabitGet, setHabitGet }) {
   const { user } = useContext(UserLogin);
