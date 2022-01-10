@@ -51,6 +51,13 @@ function checkTheHabit(token, id, checkOrUncheck) {
   return request;
 }
 
+function getHistoryUser(token) {
+  const request = axios.get(`${BASE_URL}/habits/history/daily`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return request;
+}
+
 export {
   getUser,
   postRegistration,
@@ -59,4 +66,5 @@ export {
   deleteHabits,
   getHabitsToday,
   checkTheHabit,
+  getHistoryUser,
 };

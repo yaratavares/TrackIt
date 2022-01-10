@@ -7,19 +7,17 @@ export default function PercentageToday({ habits }) {
     useContext(PercentageProgress);
 
   useEffect(() => {
-    let takeDone = [];
-    habits.map((habit) => {
-      if (habit.done === true) {
-        takeDone = [...takeDone, habit.done];
-      }
-      return takeDone;
-    });
-    if (takeDone.length !== 0) {
+    if (habits.length !== 0) {
+      let takeDone = [];
+      habits.map((habit) => {
+        if (habit.done === true) {
+          takeDone = [...takeDone, habit.done];
+        }
+        return takeDone;
+      });
       setPercentageProgress(
         Math.round((takeDone.length / habits.length) * 100)
       );
-    } else {
-      setPercentageProgress(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [habits]);
