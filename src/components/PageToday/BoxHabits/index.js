@@ -29,13 +29,15 @@ export default function BoxHabits({ habit, setHabit }) {
     >
       <div className="tittleAndInformations">
         <h3>{habit.name}</h3>
-        <p>
-          Sequência atual:{" "}
-          <span className="sequence">{habit.currentSequence} dias</span>
-          <br />
-          Seu recorde:{" "}
-          <span className="record">{habit.highestSequence} dias</span>
-        </p>
+        {habit.currentSequence !== undefined ? (
+          <p>
+            Sequência atual:{" "}
+            <span className="sequence">{habit.currentSequence} dias</span>
+            <br />
+            Seu recorde:{" "}
+            <span className="record">{habit.highestSequence} dias</span>
+          </p>
+        ) : null}
       </div>
       <CheckHabits habit={habit} setHabit={setHabit} />
     </Habit>

@@ -11,7 +11,9 @@ export default function CheckHabits({ habit, setHabit }) {
   const { user } = useContext(UserLogin);
 
   useEffect(() => {
-    updateHabitsToday(user.token, setHabit);
+    if (setHabit !== undefined) {
+      updateHabitsToday(user.token, setHabit);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkOrUncheck]);
 
@@ -27,7 +29,10 @@ export default function CheckHabits({ habit, setHabit }) {
   }
 
   return (
-    <Check checkOrUncheck={habit.done} onClick={() => clickCheck()}>
+    <Check
+      checkOrUncheck={habit.done}
+      onClick={setHabit !== undefined ? clickCheck : null}
+    >
       <img src={check} alt="check"></img>
     </Check>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BoxCalendar = styled.div`
-  .calendarStyle {
+  .react-calendar {
     width: 100%;
     height: 402px;
     border: none;
@@ -18,6 +18,11 @@ export const BoxCalendar = styled.div`
       }
     }
   }
+
+  .react-calendar.hidden {
+    display: none;
+  }
+
   .noDone {
     background-color: #ea5766;
   }

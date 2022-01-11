@@ -5,7 +5,11 @@ import dayjs from "dayjs";
 
 import { BoxCalendar } from "./style";
 
-export default function BlockCalendar({ historyUser }) {
+export default function BlockCalendar({
+  historyUser,
+  changeHistory,
+  setOnChangeHistory,
+}) {
   const [arrayNoDone, setArrayNoDone] = useState([]);
   const [arrayDays, setArrayDays] = useState([]);
 
@@ -33,10 +37,18 @@ export default function BlockCalendar({ historyUser }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [historyUser]);
 
+  function onChangeClick(date) {
+    const dateClick = dayjs(date).format("DD/MM/YYYY");
+    if (arrayDays.includes(dateClick)) {
+      setOnChangeHistory(dateClick);
+    }
+  }
+
   return (
     <BoxCalendar>
       <Calendar
-        className="calendarStyle"
+        // className={changeHistory !== undefined ? "hidden" : null}
+        onChange={(date) => onChangeClick(date)}
         showFixedNumberOfWeeks={true}
         calendarType="US"
         tileClassName={({ date, view }) =>

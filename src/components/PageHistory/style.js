@@ -18,4 +18,11 @@ export const TopoMenu = styled.div`
     font-size: 22.98px;
     margin-bottom: 11px;
   }
+
+  img {
+    width: 25px;
+    height: 30px;
+
+    cursor: pointer;
+  }
 `;

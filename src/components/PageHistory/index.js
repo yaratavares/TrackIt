@@ -7,9 +7,12 @@ import HeaderPage from "../HeaderPage";
 import { Container, TopoMenu } from "./style";
 import { getHistoryUser } from "../../common/services/trackit";
 import BlockCalendar from "./BlockCalendar";
+import back from "../../common/assets/back.png";
+import PageTodayHistory from "./PageTodayHistory";
 
 export default function PageHistory() {
   const [historyUser, setHistoryUser] = useState([]);
+  const [changeHistory, setOnChangeHistory] = useState();
   const { user } = useContext(UserLogin);
   const navigate = useNavigate();
 
@@ -32,8 +35,26 @@ export default function PageHistory() {
       <Container>
         <TopoMenu>
           <p>Histórico</p>
+          {changeHistory !== undefined ? (
+            <img
+              onClick={() => setOnChangeHistory(undefined)}
+              src={back}
+              alt="back"
+            ></img>
+          ) : null}
         </TopoMenu>
-        <BlockCalendar historyUser={historyUser}></BlockCalendar>
+        {changeHistory === undefined ? (
+          <BlockCalendar
+            historyUser={historyUser}
+            changeHistory={changeHistory}
+            setOnChangeHistory={setOnChangeHistory}
+          ></BlockCalendar>
+        ) : (
+          <PageTodayHistory
+            historyUser={historyUser}
+            dateChangeHistory={changeHistory}
+          ></PageTodayHistory>
+        )}
       </Container>
       <FooterPage></FooterPage>
     </>

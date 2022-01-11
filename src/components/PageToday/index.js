@@ -10,10 +10,12 @@ import { Container } from "./style";
 import updateHabitsToday from "../../common/functions/updateHabitsToday";
 import { useNavigate } from "react-router-dom";
 
-export default function PageToday() {
+export default function PageToday({ changeHistory }) {
   const [habitsDay, setHabitsDay] = useState([]);
   const navigate = useNavigate();
   const { user } = useContext(UserLogin);
+
+  console.log(changeHistory);
 
   useEffect(() => {
     if (!user.token) {
