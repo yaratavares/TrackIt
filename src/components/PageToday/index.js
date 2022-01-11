@@ -15,8 +15,6 @@ export default function PageToday({ changeHistory }) {
   const navigate = useNavigate();
   const { user } = useContext(UserLogin);
 
-  console.log(changeHistory);
-
   useEffect(() => {
     if (!user.token) {
       alert("Primeiro faça Login ou cadastre-se!");

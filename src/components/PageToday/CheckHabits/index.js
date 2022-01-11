@@ -25,7 +25,6 @@ export default function CheckHabits({ habit, setHabit }) {
       request = checkTheHabit(user.token, habit.id, "check");
     }
     request.then(() => setCheckOrUncheck(!checkOrUncheck));
-    request.catch(() => console.log(request));
   }
 
   return (

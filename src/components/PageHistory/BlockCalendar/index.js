@@ -17,15 +17,17 @@ export default function BlockCalendar({
     const array = [];
     const arrayNoDone = [];
     const today = dayjs().format("DD/MM/YYYY");
-    historyUser.map((days) => {
+    historyUser.forEach((days) => {
       days.habits.map((habit) =>
         !habit.done
           ? arrayNoDone.push(dayjs(habit.date).format("DD/MM/YYYY"))
           : null
       );
-      days.habits.map((habit) =>
-        array.push(dayjs(habit.date).format("DD/MM/YYYY"))
-      );
+      days.habits.map((habit) => {
+        array.push(dayjs(habit.date).format("DD/MM/YYYY"));
+        return array;
+      });
+      return;
     });
 
     const arrayFilter = array.filter((days) => days !== today);
@@ -47,7 +49,6 @@ export default function BlockCalendar({
   return (
     <BoxCalendar>
       <Calendar
-        // className={changeHistory !== undefined ? "hidden" : null}
         onChange={(date) => onChangeClick(date)}
         showFixedNumberOfWeeks={true}
         calendarType="US"
